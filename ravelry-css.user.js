@@ -5,7 +5,7 @@
 // @supportURL   https://github.com/bsundsrud/tampermonkey-ravelry-css/issues
 // @updateURL    https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.user.js
 // @downloadURL  https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.user.js
-// @version      0.3
+// @version      0.4
 // @description  Soften the Ravelry redesign
 // @author       Benn Sundsrud
 // @match        https://www.ravelry.com/*
@@ -20,8 +20,10 @@
 
     //background colors
     let defaultBackgroundColor = "#f8f8f8";
+    let defaultBackgroundFacetColor = "#dff3eb";
     let inputBackgroundColor = "transparent";
     let headerBackgroundColor = "#e8e8e8";
+    let subheaderBackgroundColor = "#d8d8d8";
 
     // box shadow
     let boxShadowSize = "2px";
@@ -43,6 +45,14 @@
 
 body, body.normal, #page_header {
   color: ${defaultFontColor};
+  background-color: ${defaultBackgroundColor} !important;
+  background: ${defaultBackgroundColor} !important;
+}
+body.search .advanced_search__facets {
+  background-color: ${defaultBackgroundFacetColor};
+}
+body.search .advanced_search__facet_content {
+  border: ${borderDef};
   background-color: ${defaultBackgroundColor};
 }
 .basic_box, .box {
@@ -64,7 +74,7 @@ body, body.normal, #page_header {
 }
 .box_contents {
   border: none;
-  border-bottom-left-radius: ${borderRadius};
+  border-bottom-left-radius: ${borderRadius};.form_select, .fake_form_select
   border-bottom-right-radius: ${borderRadius};
 }
 .clicker--large button, button.clicker--large, a.clicker--large {
@@ -82,9 +92,23 @@ body, body.normal, #page_header {
 #advanced_search_link, #advanced_search_link:visited {
   color: ${defaultFontColor} !important;
 }
+body.topics_index .pagination a, .page_links .pagination a, .page_buttons a {
+  border: ${borderDef};
+  color: ${defaultFontColor};
+  border-radius: ${borderRadius};
+  box-shadow: var(--global-box-shadow-size) var(--global-box-shadow-reversed-size) 0 0 ${boxShadowColor};
+}
+.page_bar__current {
+  border: ${borderDef};
+  border-radius: ${borderRadius};
+}
 body.with_navigation_v2 #page_header {
   border-bottom: ${borderDef};
-  background-color: ${headerBackgroundColor};
+  background-color: ${headerBackgroundColor} !important;
+}
+body.search #search_navigation {
+  border-bottom: ${borderDef};
+  background-color: ${subheaderBackgroundColor} !important;
 }
 .c-navigation_indicator__snake {
   border-bottom: 5px solid ${borderColor};
@@ -99,6 +123,12 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 input[type=text], input[type=password] {
+  border: ${borderDef};
+}
+.form_select, .fake_form_select {
+  background-color: ${defaultBackgroundColor};
+}
+body.search .advanced_search__filter_jump .form_select {
   border: ${borderDef};
 }
 `;
