@@ -5,7 +5,7 @@
 // @supportURL   https://github.com/bsundsrud/tampermonkey-ravelry-css/issues
 // @updateURL    https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.user.js
 // @downloadURL  https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.user.js
-// @version      0.4
+// @version      0.5
 // @description  Soften the Ravelry redesign
 // @author       Benn Sundsrud
 // @match        https://www.ravelry.com/*
@@ -110,6 +110,10 @@ body.search #search_navigation {
   border-bottom: ${borderDef};
   background-color: ${subheaderBackgroundColor} !important;
 }
+body.supports_subnavigation.with_subnavigation .tabs--subnavigation {
+  border-bottom: ${borderDef};
+  background-color: ${defaultBackgroundColor} !important;
+}
 .c-navigation_indicator__snake {
   border-bottom: 5px solid ${borderColor};
 }
@@ -131,7 +135,29 @@ input[type=text], input[type=password] {
 body.search .advanced_search__filter_jump .form_select {
   border: ${borderDef};
 }
+#topics table, .forum_glance table {
+  border-bottom: ${borderDef};
+}
+#topics table th:first-of-type, #topics table td:first-of-type, .forum_glance table th:first-of-type, .forum_glance table td:first-of-type {
+  border-left: ${borderDef};
+}
+#topics table th:last-of-type, #topics table td:last-of-type, .forum_glance table th:last-of-type, .forum_glance table td:last-of-type {
+  border-right: ${borderDef};
+}
+#topics table tr:last-of-type td, .forum_glance table tr:last-of-type td {
+  border-bottom: ${borderDef};
+}
+#topics table th, #topics table tr:first-of-type td, .forum_glance table th, .forum_glance table tr:first-of-type td {
+  border-top: ${borderDef};
+}
+table.reply_list a, .forum_glance table a {
+  color: ${defaultFontColor};
+}
 `;
 
     GM_addStyle(css);
+    // The forum headers are hardcoded black as element styles.  The following line is done out of spite.
+    document.getElementById("content").querySelectorAll(".forums .forum_glance .forum_glance__header h2 a").forEach(function(el) {
+        el.style.color = defaultFontColor;
+    });
 })();
