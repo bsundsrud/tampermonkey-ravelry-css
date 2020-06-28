@@ -3,8 +3,8 @@
 // @namespace    https://github.com/bsundsrud
 // @homepage     https://github.com/bsundsrud/tampermonkey-ravelry-css
 // @supportURL   https://github.com/bsundsrud/tampermonkey-ravelry-css/issues
-// @updateURL    https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.js
-// @downloadURL  https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.js
+// @updateURL    https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.user.js
+// @downloadURL  https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.user.js
 // @version      0.2
 // @description  Soften the Ravelry redesign
 // @author       Benn Sundsrud
