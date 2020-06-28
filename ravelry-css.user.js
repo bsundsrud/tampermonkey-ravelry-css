@@ -5,7 +5,7 @@
 // @supportURL   https://github.com/bsundsrud/tampermonkey-ravelry-css/issues
 // @updateURL    https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.user.js
 // @downloadURL  https://raw.githubusercontent.com/bsundsrud/tampermonkey-ravelry-css/master/ravelry-css.user.js
-// @version      0.2
+// @version      0.3
 // @description  Soften the Ravelry redesign
 // @author       Benn Sundsrud
 // @match        https://www.ravelry.com/*
